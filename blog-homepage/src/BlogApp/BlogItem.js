@@ -24,52 +24,54 @@ class BlogItem extends Component {
 
       return(
         <div
-          class="container tile"
+          className="tile"
           key={idx}
           style={{
             cursor: 'pointer'
           }}
         >
-          <div onClick={this.props.takeMeToTheArticle(idx)}>
-            <img
-              class="article-image"
-              src={article.image}
-              alt='main'
-            ></img>
+          <div
+            className="article-image"
+            onClick={this.props.takeMeToTheArticle(idx)}
+            style={{
+              backgroundImage: `url(${article.image})`
+            }}
+          >
           </div>
-          <div class="article-details">
+          <div className="article-details">
             <img
-              class="article-audio"
+              className="article-audio"
               src={hasAudioIcon}
               alt='Audio'
             ></img>
-            <span class="meta-data">
+            <span className="meta-data">
               {article.hasAudioAvailable ? 'Has ': 'No '} Audio Available
             </span>
             <div
-              class="article-title"
+              className="article-title"
               onClick={this.props.takeMeToTheArticle(idx)}
             >{article.title}</div>
             <div
-              class="article-description"
+              className="article-description"
               onClick={this.props.takeMeToTheArticle(idx)}
             >{article.description}</div>
-            <div class="author-details">
-              <div class="author-image">
+            <div className="author-details">
+              <div className="author-image">
                 <img
                   src={article.authorImage}
-                  class="profile-pic"
+                  className="profile-pic"
                   alt={article.authorName}
                 ></img>
               </div>
-              <div class="other-info">
-                <div class="author-name">{article.authorName}</div>
-                <div class="article-meta-data">
-                  <div class="article-post-date">{article.postedDate}</div>
+              <div className="spacer"></div>
+              <div className="other-info">
+                <div className="author-name">{article.authorName}</div>
+                <div className="article-meta-data">
+                  <div className="article-post-date">{article.postedDate}</div>
                   <span>&#183;</span>
-                  <div class="minutes-to-read">{article.minutesToRead}</div>
+                  <div className="minutes-to-read">{article.minutesToRead}</div>
                   <img
-                    class="bookmark"
+                    className="bookmark"
                     onClick={this.props.bookmarkMe(idx)}
                     src={isArticleBookmarked}
                     alt='bookmark'
@@ -82,7 +84,7 @@ class BlogItem extends Component {
       );
     });
 
-    return <div class="container">{articleItems}</div>;
+    return <div className="tiles">{articleItems}</div>;
   }
 }
 
