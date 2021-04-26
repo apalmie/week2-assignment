@@ -43,8 +43,17 @@ class BlogItem extends Component {
               src={hasAudioIcon}
               alt='Audio'
             ></img>
-            <div class="article-title">{article.title}</div>
-            <div class="article-description">{article.description}</div>
+            <span class="meta-data">
+              {article.hasAudioAvailable ? 'Has ': 'No '} Audio Available
+            </span>
+            <div
+              class="article-title"
+              onClick={this.props.takeMeToTheArticle(idx)}
+            >{article.title}</div>
+            <div
+              class="article-description"
+              onClick={this.props.takeMeToTheArticle(idx)}
+            >{article.description}</div>
             <div class="author-details">
               <div class="author-image">
                 <img

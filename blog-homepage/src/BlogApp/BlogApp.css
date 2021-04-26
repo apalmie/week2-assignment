@@ -1,8 +1,13 @@
 span {
-/* border-radius: 5px; */
-/* border-style: outset; */
 padding: .5%;
 font-weight: bolder;
+}
+
+.meta-data {
+  font-weight: normal;
+  font-size: 15px;
+  font-family: inherit;
+  text-align: center;
 }
 
 .BlogApp {
